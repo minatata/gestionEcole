@@ -1,0 +1,25 @@
+
+<div class="col-lg-10 ">
+    <div class="row ">
+        <div class="container">
+            <div class="card">
+              <div class="card-header text-white text-center " id="ins" style="background-color: cornflowerblue;">
+                Ajout d'une note
+              </div>
+              <div class="card-body">
+                <form [formGroup]="formNote" (ngSubmit)="ajoutNote()">
+                 <div class="row">
+                    <div class="form-group col-lg-6">
+                      Note:
+                      <input type="number" class="form-control" formControlName="valeurNote">
+                    </div>
+                  <button type="submit" class="btn btn-success col-lg-3 ">Ajouter</button>
+                </div>
+                </form>
+              </div>
+              <div class="card-footer">
+              </div>
+            </div>
+         </div>  
+    </div>
+</div>

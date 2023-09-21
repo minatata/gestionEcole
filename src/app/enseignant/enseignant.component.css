@@ -1,0 +1,38 @@
+#ins{
+    font-size:xx-large;
+    font-style: inherit;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#aj{
+    justify-content: center; /* Centre horizontalement */
+}
+.enseignant-list,
+.enseignant-form {
+  position: absolute;
+  
+  
+ 
+width: 80%;
+  
+
+ /* background-color: white;  Fond blanc pour la lisibilité */
+}
+
+/* Style spécifique pour la liste (vous pouvez personnaliser)
+.enseignant-list {
+
+} */
+
+/* Style spécifique pour le formulaire (vous pouvez personnaliser) */
+.enseignant-form {
+    justify-content: center; /* Centre horizontalement */
+    width: 50%;
+    height: 50%;
+
+}
+
+/* Styles pour le bouton "Annuler" dans le formulaire */
+.matiere-form .btn-annuler {
+  margin-top: 10px; /* Ajustez la marge comme nécessaire */
+}

@@ -1,0 +1,32 @@
+#ins{
+    font-size:xx-large;
+    font-style: inherit;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#aj{
+    justify-content: center; /* Centre horizontalement */
+}
+.inscrit-list,
+.inscrit-form {
+  position: absolute;
+
+ 
+
+ /* background-color: white;  Fond blanc pour la lisibilité */
+  
+}
+
+
+.inscrit-form {
+  width: 60%;
+ justify-content:center ;
+ margin-left: 90px;
+ margin-top: 40px;
+}
+.custom-margin{
+    margin-right: 20px;
+}
+.table{
+    width: 100%;
+}

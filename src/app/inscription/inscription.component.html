@@ -1,0 +1,203 @@
+<div class="d-flex" id="aj">
+  <mat-icon class="custom-icon" (click)="adInscription()">add</mat-icon>
+  <form class="d-flex" >
+    <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchText" (input)="chercher()">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</div>
+  <hr>  
+  <div class="inscrit-list" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Prénom</th>
+          <th scope="col">Date de Naissance</th>
+          <th scope="col">Lieu de Naissance</th>
+          <th scope="col">Adresse</th>
+          <th scope="col">Téléphone</th>
+          <th scope="col">Email</th>
+          <th scope="col">Année Scolaire</th>
+          <th scope="col">Date d'Inscription</th>
+          <th scope="col">Montant</th>
+          <th scope="col">Mode</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inscrip of Inscriptions | serach: searchText ">
+          <td>{{inscrip[0] }}</td>
+          <td>{{ inscrip[1] }}</td>
+          <td>{{ inscrip[2] }}</td>
+          <td>{{ inscrip[3] }}</td>
+          <td>{{ inscrip[4] }}</td>
+          <td>{{ inscrip[5] }}</td>
+          <td>{{ inscrip[6] }}</td>
+          <td>{{ inscrip[7] }}</td>
+          <td>{{ inscrip[8] }}</td>
+          <td>{{ inscrip[9] }}</td>
+          <td>{{ inscrip[10] }}</td>
+          {{ inscrip.nom }}
+          <td>
+            <button  >
+              <mat-icon class="mr-2">delete</mat-icon>
+            </button>
+          <button>
+            <mat-icon class="mr-2">create</mat-icon>
+          </button> 
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+<div class="inscrit-form" *ngIf="afficheForm">
+      <div class="card">
+        <div class="card-header  text-black text-center " id="ins">
+          Formulaire d'inscription
+        </div>
+        <div class="card-body">
+          <form [formGroup]="inscritForm" (ngSubmit)="inscrireEleve()">
+            <fieldset class="border border-m-3">
+              <legend>Information de l'éléve</legend>
+           <div class="row">
+              <div class="form-group col-lg-6 mt-3">
+                Nom:
+                <input type="text" class="form-control mt-3" formControlName="nom" required>
+              </div>
+              <div class="form-group col-lg-6 mt-3">
+                 Prenom:
+                <input type="text" class="form-control mt-3" formControlName="prenom" required>
+              </div>
+           </div>
+           <div class="row">
+              <div class="form-group col-lg-6 mt-3">
+                Date de Naissance:
+                <input type="date" class="form-control mt-3" formControlName="dateDeNaissance" required>
+              </div>
+              <div class="form-group col-lg-6 mt-3">
+                Lieu de Naissance:
+                <input type="text" class="form-control mt-3" formControlName="lieuDeNaissance" required>
+              </div>
+           </div>
+           <div class="row">
+              <div class="form-group col-lg-6 mt-3">
+                Adresse:
+                <input type="text" class="form-control mt-3" formControlName="adresse" required>
+              </div>
+              <div class="form-group col-lg-6 mt-3">
+                Téléphone:
+                <input type="text" class="form-control mt-3" formControlName="telephone" required>
+              </div>
+           </div>
+           <div class="row">
+              <div class="form-group col-lg-6 mt-3">
+                Email:
+                <input type="email" class="form-control mt-3" formControlName="email" required>
+              </div>
+              <div class="form-group col-lg-6 mt-3">
+                 Sexe:<br>
+                  <input type="radio" name="sex" >M
+                  <input type="radio" name="sex">F  
+             </div>
+           </div>
+          </fieldset>
+           
+           
+            <fieldset  class="border border-m-3">
+              <legend>Information relative a l'inscription</legend>
+              <div class="row">
+                <div class="form-group col-lg-6 mt-3">
+                  Classe:
+                  <select  class="form-control mt-3" formControlName="classe">
+                    <option value="1">CI</option>
+                    <option value="2">CP</option>
+                    <option value="3">CE1</option>
+                    <option value="4">CE2</option>
+                    <option value="5">CM1</option>
+                    <option value="6">CM2</option>
+                  </select>
+                </div>
+              <div class="form-group col-lg-6 mt-3">
+                Redoublant:
+               <select class="form-select mt-3" aria-label="Default select example" formControlName="redoublant">
+                 <option >oui</option>
+                 <option >non</option>
+               </select>
+             </div>
+            </div>
+            <div class="row">
+               <div class="form-group col-lg-6 mt-3">
+                 Année Scolaire:
+                 <input type="text" class="form-control mt-3" formControlName="AnneeScolaire" required="Champs obligatoire">
+               </div>
+               <div class="form-group col-lg-6 mt-3">
+                 Date d'inscription:
+                 <input type="date" class="form-control mt-3" formControlName="dateInscription" required="Champs obligatoire">
+               </div>
+            </div>
+            <div class="row">
+               <div class="form-group col-lg-6 mt-3">
+                 mode:
+                 <input type="text" class="form-control mt-3" formControlName="mode" required="Champs obligatoire">
+               </div>
+               <div class="form-group col-lg-6 mt-3">
+                 Montant:
+                 <input type="number" class="form-control mt-3" formControlName="Montant" required="Champs obligatoire">
+               </div>
+            </div>
+            </fieldset>
+            <button type="submit" class="btn btn-success mt-3 custom-margin"[disabled]="infoForm.valid" >Inscrire</button>
+            <button type="submit" class="btn btn-danger mt-3 "  (click)="sortir()">Quitter</button>
+          
+          </form>
+       
+       <!-- <div class="card">
+         
+          <div class="card-body">
+            <form [formGroup]="infoForm">     
+              <fieldset class="border border-m-3">
+                <legend>Information relative a l'inscription</legend>
+             <div class="row">
+                <div class="form-group col-lg-6 mt-3">
+                  Classe:
+                  <input type="text" class="form-control mt-3" formControlName="classe">
+                </div>
+                <div class="form-group col-lg-6 mt-3">
+                   Redoublant:
+                  <select class="form-select mt-3" aria-label="Default select example" formControlName="redoublant">
+                    <option value="2">oui</option>
+                    <option value="3">non</option>
+                  </select>
+                </div>
+             </div>
+             <div class="row">
+                <div class="form-group col-lg-6 mt-3">
+                  Année Scolaire:
+                  <input type="text" class="form-control mt-3" formControlName="AnneeScolaire">
+                </div>
+                <div class="form-group col-lg-6 mt-3">
+                  Date d'inscription:
+                  <input type="text" class="form-control mt-3" formControlName="dateInscription">
+                </div>
+             </div>
+             <div class="row">
+                <div class="form-group col-lg-6 mt-3">
+                  mode:
+                  <input type="text" class="form-control mt-3" formControlName="mode">
+                </div>
+                <div class="form-group col-lg-6 mt-3">
+                  Montant:
+                  <input type="text" class="form-control mt-3" formControlName="Montant">
+                </div>
+             </div>
+            
+              </form 
+            </form>--> 
+          </div>
+        </div>
+        <div class="card-footer"></div>
+</div>
+
+

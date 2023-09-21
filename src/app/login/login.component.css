@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Pour couvrir toute la hauteur de la vue */
+}
+  
+.login-container {
+    text-align: center; /* Pour centrer le contenu à l'intérieur du conteneur */
+    padding: 20px;
+    border: 1px solid #ccc; /* Ajoutez des styles de bordure ou de fond si nécessaire */
+    border-radius: 5px;
+    color: blueviolet;
+    padding-left: 40px;
+}
+h2{
+    text-align: center;
+}

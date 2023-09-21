@@ -1,0 +1,55 @@
+#ins{
+    font-size:xx-large;
+    font-style: inherit;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.custom-icon{
+    font-size: 2em; 
+    color: rgb(9, 9, 12); 
+
+}
+#aj{
+    justify-content: center; /* Centre horizontalement */
+}
+/* Styles pour la superposition */
+.matiere-list,
+.matiere-form {
+  position: absolute;
+  
+  
+ 
+ width: 90%;
+  
+
+ /* background-color: white;  Fond blanc pour la lisibilité */
+}
+
+/* Style spécifique pour la liste (vous pouvez personnaliser) */
+.matiere-list {
+  z-index: 1; /* Liste en premier plan */
+}
+
+/* Style spécifique pour le formulaire (vous pouvez personnaliser) */
+.matiere-form {
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right:60px; 
+    justify-content: center; /* Centre horizontalement */
+    width: 30%;
+    height: 80%;
+z-index: 2; /* Formulaire au-dessus de la liste */
+}
+
+/* Styles pour le bouton "Annuler" dans le formulaire */
+.matiere-form .btn-annuler {
+  margin-top: 10px; /* Ajustez la marge comme nécessaire */
+}
+.custom-margin{
+  margin-right: 20px;
+}
+.table{
+  width: 70%;
+  justify-content: center;
+  margin-left: 5%;
+}

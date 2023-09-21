@@ -1,0 +1,36 @@
+.row1{
+    height: 90px;
+    background-color: rgb(127, 147, 187);
+    width: 100%;
+    font-size: xx-large;
+    color: rgb(21, 24, 172);
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px; 
+    font: 2em sans-serif;
+
+}
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    
+    padding-top: 10px;
+    border: 1px solid #ccc;
+   
+    color: rgb(21, 24, 172);
+
+}
+.background-container {
+    background-image: url('/assets/welcome.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity 1s; /* Animation d'opacité pour le délai */
+    opacity: 0; /* Initialement masqué */
+}
+
+.show-background {
+    opacity: 1; /* Afficher l'image de fond avec l'opacité complète */
+}
